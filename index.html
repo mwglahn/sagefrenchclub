@@ -11,51 +11,216 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="./style sheets/style.css"> <!--Change file directory when uploading-->
-
-
     <title>Sage French Club</title>
-    <link rel="icon" type="image/x-icon" href="/"> <!--Change file directory when uploading-->
+    <link rel="icon" type="image/x-icon" href="/!images/frenchclub.png"> <!--Change file directory when uploading-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
-        #background {
-            background-color: #c1b199;
-            opacity: .3;
-            background-image:  linear-gradient(#faf4e1 2.3000000000000003px, transparent 2.3000000000000003px), linear-gradient(to right, #faf4e1 2.3000000000000003px, #c1b199 2.3000000000000003px);
-            background-size: 46px 46px;
+        
+        body {
+            background-color: #f4ebdd;
+            background: radial-gradient(circle, transparent 20%, #f4ebdd 20%, #f4ebdd 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #f4ebdd 20%, #f4ebdd 80%, transparent 80%, transparent) 65px 65px, linear-gradient(#fffaea 5.2px, transparent 5.2px) 0 -2.6px, linear-gradient(90deg, #fffaea 5.2px, #f4ebdd 5.2px) -2.6px 0;
+            background-size: 130px 130px, 130px 130px, 65px 65px, 65px 65px;
         }
+
+        .topnav {
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            opacity:1.0;
+            float: left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add an active class to highlight the current page */
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        /* Hide the link that should open and close the topnav on small screens */
+        .topnav .icon {
+            display: none;
+        }
+        
+        .navMenuItem:hover {
+            background-color:#ebebeb;
+        }
+
+        #navMenuJoin:hover {
+             background-image: url("/!images/Flag_of_France.svg.png");
+             background-size: cover;
+        }
+        
+        @media screen and (min-width: 768px){
+            .topnav {display: none;}
+        }
+
+        @media screen and (max-width: 767px) {
+            #desktopNav {display:none;}
+            .topnav a:not(:first-child) {display: none;}
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+        @media screen and (max-width: 768px) {
+            .topnav.responsive {position: relative;}
+            .topnav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            .topnav.responsive a.navDropdown{
+                 width: 80%;
+            }
+
+        }
+                
     </style>
 </head>
 
 <body>
-    <div id="background" style="height: 100vh; z-index: -1;"></div>
     
     <div class="container">
-        <div class="row pt-2">
-            <div class="col-12">
-                <h1 class="text-center bg-white rounded-3 p-3">Sage French Club</h1>
+        <div>
+            <div class="row pt-2">
+                <div class="col-12">
+                    <img src="/!images/frenchclub.png" width="150" style="margin: auto; display: block;" class="pb-2">
+                    <h1 class="text-center bg-white rounded-3 p-3  shadow-sm">Sage French Club</h1>
+                </div>
             </div>
+        <hr>
+        <!--This is for the RWD menu on mobile-->
+        <div class="row pb-2">
+            <div class="col-md-3">
+                <div class="topnav container rounded-3" id="myTopnav" style="background-color: white;">
+                    <a href="#home" class="rounded-3 navDropdown mt-1">Home</a>
+                    <a href="#news" class="rounded-3 navDropdown">Newsletter</a>
+                    <a href="#contact" class="rounded-3 navDropdown">Resources</a>
+                    <a href="#about" class="rounded-3 navDropdown mb-1" id="navMenuJoin">Join us!</a>
+                    <a href="javascript:void(0);" class="icon rounded-3 mb-1 mt-1" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+        </div> 
+        <!--This is for the menu on desktop--> 
         </div>
         <div class="row">
-            <div class="col-3">
-                <h3 class="bg-white rounded-3 p-3 text-center">Home</h3>
+            <div class="col-md-3" id="desktopNav">
+                <div class="container bg-white rounded-3 p-2 mb-2 shadow-sm">
+                        <a href="#home" style="text-decoration: none; color: #000000;"><h4 class="rounded-1 navMenuItem p-1">Home</h4></a>
+                        <a href="#newsletter" style="text-decoration: none; color: #000000;"><h4 class="rounded-1 navMenuItem p-1">Newsletter</h4></a>
+                        <a href="#resources" style="text-decoration: none; color: #000000;"><h4 class="rounded-1 navMenuItem p-1">Resources</h4></a>
+                        <a href="#join" style="text-decoration: none; color: #000000;"><h4 class="rounded-1 p-1" id="navMenuJoin">Join us!</h4></a>
+    
+                </div>
             </div>
-            <div class="col-3">
-                <h3 class="bg-white rounded-3 p-3 text-center">Resources</h3>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="containter bg-white rounded-3 p-2 mb-2 shadow-sm ">
+                            <h1>Bonjour! good venue to the french club website!</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus doloremque ut dicta quia asperiores facilis, sunt voluptates eligendi ex labore corporis deleniti reiciendis perferendis, magni dolorum fugiat sit accusamus ad!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="containter bg-white rounded-3 p-2 mb-2 shadow-sm">
+                        <h3>Lorem Ipsum 1</h3>
+                        <div style="background-color: lightgray; height: 200px;" class="rounded-3"></div>
+                        <p class="card-text placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-8"></span>
+                        </p>
+                        <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="containter bg-white rounded-3 p-2 mb-2 shadow-sm">
+                            <h3>Lorem Ipsum 2</h3>
+                            <div style="background-color: lightgray; height: 200px;" class="rounded-3"></div>
+                            <p class="card-text placeholder-glow">
+                                <span class="placeholder col-7"></span>
+                                <span class="placeholder col-4"></span>
+                                <span class="placeholder col-4"></span>
+                                <span class="placeholder col-6"></span>
+                                <span class="placeholder col-8"></span>
+                            </p>
+                        <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="containter bg-white rounded-3 p-2 mb-2 shadow-sm">
+                            <h3>Lorem Ipsum 3</h3>
+                            <div style="background-color: lightgray; height: 200px;" class="rounded-3"></div>
+                            <p class="card-text placeholder-glow">
+                                <span class="placeholder col-7"></span>
+                                <span class="placeholder col-4"></span>
+                                <span class="placeholder col-4"></span>
+                                <span class="placeholder col-6"></span>
+                                <span class="placeholder col-8"></span>
+                            </p>
+                        <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-3">
-                <h3 class="bg-white rounded-3 p-3 text-center">Events</h3>
-            </div>
-            <div class="col-3">
-                <h3 class="bg-white rounded-3 p-3 text-center">Join</h3>
+        </div>
+        <div class="row pt-2">
+            <div class="col-12">
+                <div class="container bg-white rounded-3 p-2 mb-2 shadow-sm">        
+                    <a href="https://open.spotify.com/playlist/5jZ7KRv026RBKVRiEcUGED?si=8e9c9f9f99c1496e"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288"/>
+                        </svg> Club Playlist
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-        <!--NAV BAR-->
+        <!--NAV BAR
         
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    <div id="background" style="height: 100vh; z-index: -1; display:inline-block;"></div>-->
+
+    <script>
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous">
+        crossorigin="anonymous"
+
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav container rounded-3") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav container rounded-3";
+        }
+}
     </script>
     
 </body>
