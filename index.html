@@ -11,218 +11,414 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Sage French Club</title>
-    <link rel="icon" type="image/x-icon" href="/!images/frenchclub.png"> <!--Change file directory when uploading-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style sheets/style.css"> <!--Change file directory when uploading-->
 
-    <style>
-        
-        body {
-            background-color: #f4ebdd;
-            background: radial-gradient(circle, transparent 20%, #f4ebdd 20%, #f4ebdd 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #f4ebdd 20%, #f4ebdd 80%, transparent 80%, transparent) 65px 65px, linear-gradient(#fffaea 5.2px, transparent 5.2px) 0 -2.6px, linear-gradient(90deg, #fffaea 5.2px, #f4ebdd 5.2px) -2.6px 0;
-            background-size: 130px 130px, 130px 130px, 65px 65px, 65px 65px;
-        }
 
-        .topnav {
-            overflow: hidden;
-        }
-
-        /* Style the links inside the navigation bar */
-        .topnav a {
-            opacity:1.0;
-            float: left;
-            display: block;
-            color: #000000;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        /* Change the color of links on hover */
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        /* Add an active class to highlight the current page */
-        .topnav a.active {
-            background-color: #04AA6D;
-            color: white;
-        }
-
-        /* Hide the link that should open and close the topnav on small screens */
-        .topnav .icon {
-            display: none;
-        }
-        
-        .navMenuItem:hover {
-            background-color:#ebebeb;
-        }
-
-        #navMenuJoin:hover {
-             background-image: url("/!images/Flag_of_France.svg.png");
-             background-size: cover;
-        }
-        
-        @media screen and (min-width: 768px){
-            .topnav {display: none;}
-        }
-
-        @media screen and (max-width: 767px) {
-            #desktopNav {display:none;}
-            .topnav a:not(:first-child) {display: none;}
-            .topnav a.icon {
-                float: right;
-                display: block;
-            }
-        }
-
-        /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-        @media screen and (max-width: 768px) {
-            .topnav.responsive {position: relative;}
-            .topnav.responsive a.icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
-            .topnav.responsive a {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-            .topnav.responsive a.navDropdown{
-                 width: 80%;
-            }
-
-        }
-                
-    </style>
+    <title>Sage STEM Club</title>
+    <link rel="icon" type="image/x-icon" href="./!assets/stemfavicon.png"> <!--Change file directory when uploading-->
 </head>
 
 <body>
     
-    <div class="container">
+        <!--NAVBAR-->
+                <div class="container mobileunfriendly fixed-top">
+                    <div class="row bg-body-secondary bg-opacity-100 p-2 rounded-3 shadow-sm me-0 ms-0"
+                        style="top: 16px; z-index: 101;">
+
+                        <div class="col-md-4">
+                            <a href="/index.html"><img src="../!assets/sagestembanner.png" style="width: 100%;"
+                                    class="d-inline-block float-right hovermain p-1 rounded-2"></a>
+                        </div>
+
+                        <!-- NAVBAR -->
+                        <div class="col-md-8">
+                            <!--NAV FOR LARGER VIEWPORT-->
+                            <ul class="d-flex nav nav-justified align-items-center" style="height: 60px;">
+
+                                <li class="nav-item m-0 rounded-3 h5 hoverpurp me-2">
+                                    <a class="nav-link my-auto" href="#modules">Modules</a>
+                                </li>
+
+                                <li class="nav-item m-0 rounded-3 h5 hoverblue me-2">
+                                    <a class="nav-link my-auto" href="#about">About </a>
+                                </li>
+
+                                <li class="nav-item m-0 rounded-3 h5 hoverorange me-2">
+                                    <a class="nav-link my-auto" href="#resources">Resources</a>
+                                </li>
+
+                                <li class="nav-item m-0 rounded-3 h5 hovergreen">
+                                    <a class="nav-link my-auto" href="#join">Join!</a>
+                                </li>
+
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--RWD Nav Menu-->
+                <div class="container mobilefriendly fixed-top">
+                    <div class="row pb-2" style="z-index: index 100;;">
+                        <div class="col-md-3 ">
+                            <div class="topnav container rounded-3" id="myTopnav" style="background-color: white;">
+                                <a href="#home" class="rounded-5 navDropdown mt-1 bg-white shadow-sm"><img
+                                        src="./!assets/sagestembanner.png" style="height: 30px;"></a>
+                                <a href="#modules" class="rounded-3 navDropdown mt-1">Modules</a>
+                                <a href="#about" class="rounded-3 navDropdown">About</a>
+                                <a href="#resources" class="rounded-3 navDropdown">Resources</a>
+                                <a href="#join" class="rounded-3 navDropdown mb-1 " id="navMenuJoin">Join us!</a>
+                                <a href="javascript:void(0);" class="icon rounded-circle mb-1 mt-1 bg-body shadow-sm"
+                                    onclick="myFunction()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor"
+                                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                        <path
+                                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         <div>
-            <div class="row pt-2">
-                <div class="col-12">
-                    <img src="/!images/frenchclub.png" width="150" style="margin: auto; display: block;" class="pb-2">
-                    <h1 class="text-center bg-white rounded-3 p-3  shadow-sm">Sage French Club</h1>
-                </div>
-            </div>
-        <hr>
-        <!--This is for the RWD menu on mobile-->
-        <div class="row pb-2">
-            <div class="col-md-3">
-                <div class="topnav container rounded-3" id="myTopnav" style="background-color: white;">
-                    <a href="#home" class="rounded-3 navDropdown mt-1">Home</a>
-                    <a href="#news" class="rounded-3 navDropdown">Newsletter</a>
-                    <a href="#contact" class="rounded-3 navDropdown">Resources</a>
-                    <a href="#about" class="rounded-3 navDropdown mb-1" id="navMenuJoin">Join us!</a>
-                    <a href="javascript:void(0);" class="icon rounded-3 mb-1 mt-1" onclick="myFunction()">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                </div>
-            </div>
-        </div> 
-        <!--This is for the menu on desktop--> 
-        </div>
-        <div class="row">
-            <div class="col-md-3" id="desktopNav">
-                <div class="container bg-white rounded-3 p-2 mb-2 shadow-sm">
-                        <a href="#home" style="text-decoration: none; color: #000000;"><h4 class="rounded-1 navMenuItem p-1">Home</h4></a>
-                        <a href="#newsletter" style="text-decoration: none; color: #000000;"><h4 class="rounded-1 navMenuItem p-1">Newsletter</h4></a>
-                        <a href="#resources" style="text-decoration: none; color: #000000;"><h4 class="rounded-1 navMenuItem p-1">Resources</h4></a>
-                        <a href="#join" style="text-decoration: none; color: #000000;"><h4 class="rounded-1 p-1" id="navMenuJoin">Join us!</h4></a>
-    
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="containter bg-white rounded-3 p-2 mb-2 shadow-sm ">
-                            <h1>Bonjour! good venue to the french club website!</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus doloremque ut dicta quia asperiores facilis, sunt voluptates eligendi ex labore corporis deleniti reiciendis perferendis, magni dolorum fugiat sit accusamus ad!</p>
+            <div class="container pt-3">
+                
+                <div class="container pt-3" id="pagecontent">
+                    <!--Page Main Content-->
+                    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2"
+        tabindex="0">
+
+                    <div class="container bg-white rounded-3 p-3 pt-2 pb-1 me-0 ms-0 mb-2" id="home">
+                        <div class="row">
+                            <div class="col-md-7 p-2">
+                                <h1>Welcome to Sage STEM Club!</h1>
+                                <hr>
+                                <p class="fs-5">The Sage STEM Club explores Science, Technology, Engineering,
+                                    Math
+                                    topics through hands-on modules and projects. From robotics to rocketry and
+                                    more,
+                                    its members will learn and hopefully be inspired about all different STEM
+                                    subjects.
+                                </p>
+                                <div class="mobileunfriendly">
+                                    <p class="fst-italic fw-semibold">Interested in joining our club?</p>
+                                    <a class="btn btn-outline-primary btn-lg fs-3 fw-bold" href="#join"
+                                        role="button">Join Us!</a>
+                                </div>
+                            </div>
+                            <!--Image carousel-->
+                            <div class="col-md-5">
+                                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="5000">
+                                            <img src="!images\PXL_20250115_234022304.jpg"
+                                                class="d-block w-100 rounded-3">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="5000">
+                                            <img src="!images\PXL_20250115_233711439.jpg"
+                                                class="d-block w-100 rounded-3">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="5000">
+                                            <img src="!images\PXL_20250115_233658051.jpg"
+                                                class="d-block w-100 rounded-3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobilefriendly p-4">
+                                <hr>
+                                <p class="fst-italic fw-semibold text-center">Interested in joining our club?
+                                </p>
+
+                                <div class="d-grid gap-2 col-6 mx-auto" style="width: 200px;">
+                                    <a class="btn btn-outline-primary btn-lg fs-3 fw-bold" href="#join"
+                                        role="button">Join Us!</a>
+                                </div>
+                            </div>
                         </div>
+
+                    </div>
+                    <hr>
+
+                    <!--Page Secondary Content-->
+                    <div class="row pt-2 pb-1 me-0 ms-0">
+
+                        <!--MODULES-->
+                        <div class="container bg-white rounded-3 p-3 mb-2" style="height: 100%;">
+                            <div id="modules">
+                                <h3 class="d-inline-flex gap-1">
+                                    Modules
+                                    </a>
+                                </h3>
+                            </div>
+
+                            <div class="collapse show" id="modulescollapse">
+                                <div class="card card-body">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p>At Sage STEM Club, we teach our memebers through the methodology of
+                                                units, which we call a module. As a club, we will spend a couple of
+                                                weeks exploring a new sector of STEM and engage the participants of the
+                                                club by creating fun challenges and competitions to provide intrinsic
+                                                and extrinsic motivation.</p>
+                                            <p> In the past, we have done modules on:</p>
+                                            <ul>
+                                                <li>Web Development</li>
+                                                <li>Robotics</li>
+                                                <li>Architecture</li>
+                                                <li>3D printing and modeling</li>
+                                                <li><a href="https://zerorobotics.mit.edu/tournaments/44/info/299/0/">
+                                                        ZeroRobotics Competition (Alliance 7)</a></li>
+                                                <li>Electrical Engineering</li>
+                                            </ul>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img src="./!images/Screenshot 2026-03-17 181744.png" width="100%"
+                                                class="rounded-3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--ABOUT-->
+
+                        <div class="container bg-white rounded-3 p-3 mb-2" style="height: 100%;">
+                            <div id="about">
+                                <h3 class="d-inline-flex gap-1">
+
+                                    About
+                                    </a>
+                                </h3>
+                            </div>
+
+                            <div class="collapse show" id="aboutcollpase">
+                                <div class="card card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h4 class="text-center">Why We Started:</h4>
+                                            <hr>
+                                            <p>Our goal with Sage STEM club is to create a learning environment that is
+                                                safe
+                                                and welcoming for students to come together and learn about their STEM
+                                                related interests. We want our club to foster creativity and inquiry
+                                                within
+                                                the club members, and are always looking for ways to incorporate their
+                                                interests into club modules.</p>
+                                        </div>
+                                        <hr class="mobilefriendly">
+                                        <div class="col-md-6">
+
+                                            <h4 class="text-center">Mission Statement</h4>
+                                            <hr>
+                                            <h5 class="fst-italic">"To Encourage Students to Explore their curiosities
+                                                with the help of
+                                                Science,
+                                                Technology, Engineering, And Mathematics."</p>
+                                        </div>
+                                        <hr>
+                                        <h2 class="text-center fst-italic mb-4">Meet the club staff!</h2>
+
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3 mobilefriendly">
+                                            <img src="./!images/headshots/profile/cf.png" width="100%"
+                                                class="rounded-circle">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h2>Colin Falconer</h2>
+                                            <h4>STEM Teacher</h4>
+                                            <hr>
+                                            <p>Colin Falconer is Sage International's design, computer science, and
+                                                digital literacy teacher. His prior educational and professional
+                                                experience in the STEM field provides unqiue perspectives and critical
+                                                thinking that allow members to realize their full potential. <span
+                                                    class="fst-italic"> There is no one as perfect for a STEM club
+                                                    advisor as Colin Falconer.
+                                                </span>
+                                            <p>Email: <a
+                                                    href="mailto:colin.falconer@sageintl.org">colin.falconer@sageintl.org</a>
+                                            </p>
+                                            </p>
+
+
+                                        </div>
+                                        <div class="col-md-3 mobileunfriendly">
+                                            <img src="./!images/headshots/profile/cf.png" width="100%"
+                                                class="rounded-circle">
+                                        </div>
+
+                                    </div>
+
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="./!images/headshots/profile/mgnew.png" width="100%"
+                                                class="rounded-circle">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h2>Michael Glahn</h2>
+                                            <h4>Ameratur Coder and Tech Enthusiast</h4>
+                                            <hr>
+                                            <p>Michael Glahn is a Senior at Sage International. He was one of the first
+                                                in years to complete all twelve units of the<a
+                                                    href="https://academy.cs.cmu.edu/course-info"> Carnegie Melon
+                                                    University Computer Sceince CS1 Curriculum</a> at Sage. In his free
+                                                time, he dabbles in programming, web development <span
+                                                    class="fst-italic">(he made this website!)</span>, and working on
+                                                modifying technology.
+                                            </p>
+                                            <p>Email: <a
+                                                    href="mailto:michael.glahn@sageintl.org">michael.glahn@sageintl.org</a>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-md-3 mobilefriendly">
+                                            <img src="/!images/headshots/profile/nbnew.png" width="100%"
+                                                class="rounded-circle">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h2>Noah Baumhover-Strasser</h2>
+                                            <h4>Chief Engineer and Mr. Science</h4>
+                                            <hr>
+                                            <p>Noah was born to be a scientist. His intelligence in nearly every
+                                                catagory related to science has yet to be rivaled. Noah has the ability
+                                                to create whatever his mind comes up with, wether that be a Tesla Coil
+                                                or a soon to be robotic head. His dedication and intellect makes him a
+                                                strong leader.
+                                            </p>
+                                            <p>Email: <a
+                                                    href="mailto:noah.baumhoverstrasser@sageintl.org">noah.baumhoverstrasser@sageintl.org</a>
+                                            </p>
+
+                                        </div>
+                                        <div class="col-md-3 mobileunfriendly">
+                                            <img src="./!images/headshots/profile/nbnew.png" width="100%"
+                                                class="rounded-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--RESOURCES-->
+                        <div class="container bg-white rounded-3 p-3 mb-2" style="height: 100%;">
+                            <div id="resources">
+                                <h3 class="d-inline-flex gap-1">
+
+                                    Resources
+                                    </a>
+                                </h3>
+                            </div>
+
+                            <div class="collapse show" id="resourcescollapse">
+                                <div class="card card-body">
+                                    <div class="row">
+                                        <div class="col-md-4 mobileunfriendly">
+                                            <img src="./!assets/stemfavicon.png" width="75%" class=" mx-auto d-block">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p>If you are interested in explore STEM. Here are some resources that you
+                                                can use to further your learning.</p>
+                                            <ul>
+                                                <li><a href="https://summerofcode.withgoogle.com/">Google Summer of
+                                                        Code</a></li>
+                                                <li><a href="https://www.freecodecamp.org/learn">freeCodeCamp</a></li>
+                                                <li><a href="https://www.tinkercad.com/">TINKERCAD</a></li>
+                                                <li><a href="https://www.the-nref.org/curricula/">NASA Robotics
+                                                        Curriculum Clearinghouse</a></li>
+                                                <li><a href="https://godotengine.org/">Godot (Open-source game
+                                                        engine)</a></li>
+                                                <li><a href="https://leetcode.com/">LeetCode</a></li>
+                                                <li><a href="https://projecteuler.net/">Project Euler</a></li>
+                                                <li><a href="https://www.allaboutcircuits.com/">All About Circuits</a>
+                                                </li>
+
+                                            </ul>
+
+
+                                        </div>
+                                        <div class="col-md-4 mobilefriendly">
+                                            <img src="./!assets/stemfavicon.png" width="75%" class=" mx-auto d-block">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--JOIN-->
+                        <div class="container bg-white rounded-3 p-3 mb-2" style="height: 100%;">
+                            <div id="join">
+                                <h3 class="d-inline-flex gap-1">
+
+                                    Join Us!
+                                    </a>
+                                </h3>
+                            </div>
+
+                            <div class="collapse show" id="joincollpase">
+                                <div class="card card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>If you are interested in joining our club, feel free to show up to any
+                                                meeting! Emails are sent out every week alerting members about that
+                                                weeks meeting.<br><span class="fst-italic"
+                                                    style="font-size: small;">(Emails
+                                                    will specifcy the current module
+                                                    and events.)</span></p>
+
+
+
+                                            <p>We meet <span class="fw-bolder">every Wednesday from 4pm - 5pm
+                                                    in Mr. Falconers room.</span></p>
+
+                                            <p class="fst-italic">Hope to see you there!</p>
+
+
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <iframe class="rounded-3"
+                                                src="https://calendar.google.com/calendar/embed?src=c79ee469f35a535ed6bb4d76faf47fb449596c8c11e783e2bc29864fcf4a1296%40group.calendar.google.com&amp;ctz=America%2FDenver"
+                                                style="border: 0" width="100%" height="400px" frameborder="0"
+                                                scrolling="no"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="containter bg-white rounded-3 p-2 mb-2 shadow-sm">
-                        <h3>Lorem Ipsum 1</h3>
-                        <div style="background-color: lightgray; height: 200px;" class="rounded-3"></div>
-                        <p class="card-text placeholder-glow">
-                            <span class="placeholder col-7"></span>
-                            <span class="placeholder col-4"></span>
-                            <span class="placeholder col-4"></span>
-                            <span class="placeholder col-6"></span>
-                            <span class="placeholder col-8"></span>
-                        </p>
-                        <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="containter bg-white rounded-3 p-2 mb-2 shadow-sm">
-                            <h3>Lorem Ipsum 2</h3>
-                            <div style="background-color: lightgray; height: 200px;" class="rounded-3"></div>
-                            <p class="card-text placeholder-glow">
-                                <span class="placeholder col-7"></span>
-                                <span class="placeholder col-4"></span>
-                                <span class="placeholder col-4"></span>
-                                <span class="placeholder col-6"></span>
-                                <span class="placeholder col-8"></span>
-                            </p>
-                        <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="containter bg-white rounded-3 p-2 mb-2 shadow-sm">
-                            <h3>Lorem Ipsum 3</h3>
-                            <div style="background-color: lightgray; height: 200px;" class="rounded-3"></div>
-                            <p class="card-text placeholder-glow">
-                                <span class="placeholder col-7"></span>
-                                <span class="placeholder col-4"></span>
-                                <span class="placeholder col-4"></span>
-                                <span class="placeholder col-6"></span>
-                                <span class="placeholder col-8"></span>
-                            </p>
-                        <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="row pt-2">
-            <div class="col-12">
-                <div class="container bg-white rounded-3 p-2 mb-2 shadow-sm">        
-                    <a href="https://open.spotify.com/playlist/5jZ7KRv026RBKVRiEcUGED?si=8e9c9f9f99c1496e"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
-                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288"/>
-                        </svg> Club Playlist
-                    </a>
-                </div>
-            </div>
+            <!--Footer Content-->
+
         </div>
     </div>
-        <!--NAV BAR
-        
-    <div id="background" style="height: 100vh; z-index: -1; display:inline-block;"></div>-->
 
     <script>
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"
+        src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity = "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin = "anonymous"
 
         /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
         function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav container rounded-3") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav container rounded-3";
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav container rounded-3") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav container rounded-3";
+            }
         }
-}
     </script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+
 </body>
 
 </html>
